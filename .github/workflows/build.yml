@@ -2,6 +2,7 @@ name: CI
 
 on:
   workflow_dispatch:
+  push:
 
 jobs:
   build:
@@ -12,9 +13,6 @@ jobs:
     - uses: actions/checkout@v6
       with:
         submodules: true
-
-    - name: switch xcode
-      run: sudo xcode-select -s '/Applications/Xcode_15.0.app/Contents/Developer'
 
     - name: use cache
       id: cache
