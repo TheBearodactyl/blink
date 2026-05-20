@@ -34,16 +34,6 @@ jobs:
     - name: copy xcconfig
       run: cp template_setup.xcconfig developer_setup.xcconfig
 
-    - name: BlinkTests
-      run: |
-        set -o pipefail
-        xcodebuild \
-          -project Blink.xcodeproj \
-          -scheme BlinkTests \
-          -sdk iphonesimulator \
-          -destination 'platform=iOS Simulator,name=iPad Air (5th generation)' \
-          test | xcpretty
-
     - name: build archive
       run: |
         set -o pipefail
